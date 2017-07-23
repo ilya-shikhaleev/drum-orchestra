@@ -27,7 +27,7 @@ func wsHandler(w http.ResponseWriter, r *http.Request) {
 	//1024 - buffer size
 	ws, err := websocket.Upgrade(w, r, nil, 1024, 1024)
 	if _, ok := err.(websocket.HandshakeError); ok {
-		http.Error(w, "Not a websocket handshake", 400)
+		http.Error(w, "Not a websocket handshake", http.StatusBadRequest)
 		return
 	} else if err != nil {
 		return
