@@ -1,4 +1,4 @@
-const socketUrl = "ws://192.168.21.59:8083/ws";
+const socketUrl = "ws://" + window.location.hostname + ":" + window.location.port + "/ws";
 const audio = new Audio("audio/hihat.wav");
 
 const socket = new WebSocket(socketUrl);
