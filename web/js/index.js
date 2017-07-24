@@ -1,5 +1,4 @@
 const socketUrl = "ws://" + window.location.hostname + ":" + window.location.port + "/ws";
-const audio = document.getElementById("hihat");
 
 const socket = new WebSocket(socketUrl);
 socket.onopen = function () {
@@ -22,6 +21,7 @@ socket.onmessage = function (e) {
     const event = JSON.parse(data);
     console.log(event);
     if (event.event === "play") {
+        const audio = new Audio("audio/hihat.wav");
         audio.play();
     }
 };
