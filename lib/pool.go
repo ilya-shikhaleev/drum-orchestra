@@ -31,7 +31,6 @@ func (p *Pool) run() {
 			p.OnActionAdded(c)
 		}
 	}
-
 }
 
 func (p *Pool) OnPlayerJoined(newPlayer *Connection) {
